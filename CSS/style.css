@@ -113,17 +113,17 @@ header .menu li a:hover {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 1rem;
   background: transparent;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   font-weight: 700;
   margin-bottom: 0.2rem;
 }
 
 .container #home .main-content .project-btn:hover {
-  color: red;
-  border: 2px solid red;
+  color: white;
+  border: 2px solid white;
 }
 
 .container #home .main-content .social {

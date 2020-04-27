@@ -83,16 +83,16 @@ header {
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        color: white;
+        color: rgba($color: #ffffff, $alpha: 0.5);
         font-size: 1rem;
         background: transparent;
-        border: 2px solid white;
+        border: 2px solid rgba($color: #ffffff, $alpha: 0.5);
         font-weight: 700;
         margin-bottom: 0.2rem;
 
         &:hover {
-          color: red;
-          border: 2px solid red;
+          color: white;
+          border: 2px solid white ;
         }
       }
 
