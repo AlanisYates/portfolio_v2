@@ -11,6 +11,23 @@ body {
   background: #666666;
 }
 
+.title {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #1b2031;
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  width: 100%;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px #ffffff solid;
+  }
+}
+
 header {
   height: 90px;
   padding: 20px 40px;
@@ -36,6 +53,7 @@ header {
 
         &:hover {
           color: white;
+          transition: 0.2s ease;
         }
       }
     }
@@ -59,13 +77,6 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-      h1 {
-        font-size: 5rem;
-        font-weight: 700;
-        color: #1b2031;
-        margin-bottom: 0.5rem;
-      }
 
       h3 {
         font-size: 1.5rem;
@@ -91,6 +102,7 @@ header {
         &:hover {
           color: white;
           border: 2px solid white;
+          transition: 0.2s ease;
         }
       }
 
@@ -106,8 +118,46 @@ header {
     }
   }
 
-  #info-txt {
-    padding-top: 90px;
+  #projects {
     height: 100vh;
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    .work {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0.7rem;
+
+      .proj-container {
+        position: relative;
+        width: 100%;
+
+        .overlay {
+          position: absolute;
+          bottom: 0;
+          background: rgba(224, 165, 165, 0.9); /* Black see-through */
+          color: #f1f1f1;
+          width: 100%;
+          height: 100%;
+          transition: 0.3s ease;
+          opacity: 0;
+          border-radius: 10px;
+          border: 3px #ffffff solid;
+
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+        border: 3px #ffffff solid;
+      }
+    }
   }
 }
