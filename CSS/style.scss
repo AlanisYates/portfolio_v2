@@ -8,18 +8,19 @@
 html,
 body {
   font-family: "Manrope", sans-serif;
-  background: #2e9f79;
+  background: #666666;
 }
 
 header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: row;
   height: 90px;
-  padding: 0 40px;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+
+
 
   .menu {
+      float: right;
     ul {
       display: flex;
     }
@@ -31,42 +32,83 @@ header {
 
       a {
         text-decoration: none;
-        color: white;
+        color: rgba($color: #ffffff, $alpha: 0.5);
         font-size: 1rem;
         padding-right: 20px;
+
+        &:hover {
+          color: white;
+        }
       }
     }
   }
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 
-    #home {
-        height: calc(100vh - 90px);
-        overflow: hidden;
+  #home {
+    height: calc(100vh - 90px);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding-top: 60px;
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: 5rem;
+        font-weight: 700;
+        color: #1b2031;
+        margin-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+      }
+
+      .project-btn {
+        padding: 12px;
+        border-radius: 15px;
+        width: 140px;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        background: transparent;
+        border: 2px solid white;
+        font-weight: 700;
+        margin-bottom: 0.2rem;
 
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            h1 {
-                font-size: 5rem;
-                font-weight: 700;
-                color: #1b2031;
-                margin-bottom: .5rem;
-            }
-
-            h3 {
-                font-size: 1.5rem;
-                margin-bottom: .5rem;
-            }
+        &:hover {
+          color: red;
+          border: 2px solid red;
         }
+      }
+
+      .social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          padding: 5px;
+        }
+      }
     }
+  }
+
+  #info-txt {
+    height: calc(100vh - 90px);
+  }
 }

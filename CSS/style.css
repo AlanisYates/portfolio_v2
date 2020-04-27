@@ -8,25 +8,18 @@
 html,
 body {
   font-family: "Manrope", sans-serif;
-  background: #2e9f79;
+  background: #666666;
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   height: 90px;
-  padding: 0 40px;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+}
+
+header .menu {
+  float: right;
 }
 
 header .menu ul {
@@ -49,9 +42,13 @@ header .menu li {
 
 header .menu li a {
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 1rem;
   padding-right: 20px;
+}
+
+header .menu li a:hover {
+  color: white;
 }
 
 .container {
@@ -93,11 +90,59 @@ header .menu li a {
   font-size: 5rem;
   font-weight: 700;
   color: #1b2031;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .container #home .main-content h3 {
   font-size: 1.5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.container #home .main-content .project-btn {
+  padding: 12px;
+  border-radius: 15px;
+  width: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  background: transparent;
+  border: 2px solid white;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.container #home .main-content .project-btn:hover {
+  color: red;
+  border: 2px solid red;
+}
+
+.container #home .main-content .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container #home .main-content .social a {
+  padding: 5px;
+}
+
+.container #info-txt {
+  height: calc(100vh - 90px);
 }
 /*# sourceMappingURL=style.css.map */
