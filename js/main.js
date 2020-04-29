@@ -15,3 +15,4 @@ function myFunction() {
     menu.classList.remove("sticky");
   }
 }
+
