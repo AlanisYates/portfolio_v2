@@ -8,13 +8,13 @@
 html,
 body {
   font-family: "Manrope", sans-serif;
-  background: #666666;
+  background: black;
+  scroll-behavior: smooth;
 }
 
 .title {
   font-size: 5rem;
   font-weight: 700;
-  color: #1b2031;
   margin-bottom: 0.5rem;
 }
 
@@ -29,19 +29,20 @@ body {
 }
 
 header {
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  height: 90px;
-  padding: 0 40px;
-  z-index: 1;
+  position: fixed;
   background: black;
+  width: 100%;
+  z-index: 50;
 
   .nav-container {
-    background: black;
- 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 90px;
+    // padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .logo {
@@ -62,6 +63,10 @@ header {
   }
 
   .menu {
+    .ct-btn {
+      padding: 0;
+    }
+
     ul {
       display: flex;
 
@@ -73,7 +78,7 @@ header {
         a {
           text-decoration: none;
           color: rgba(255, 255, 255, 0.5);
-          font-size: 1.0rem;
+          font-size: 1rem;
           padding-right: 20px;
 
           &:hover {
@@ -89,99 +94,119 @@ header {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
 
-  #home {
-    height: calc(100vh - 90px);
-    overflow: hidden;
+#home {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .main-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    .main-content {
+    h1 {
+      color: white;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    .project-btn {
+      padding: 12px;
+      border-radius: 15px;
+      width: 140px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-decoration: none;
+      color: rgba($color: #ffffff, $alpha: 0.5);
+      font-size: 1rem;
+      background: transparent;
+      border: 2px solid rgba($color: #ffffff, $alpha: 0.5);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
 
-      h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-        letter-spacing: 1px;
+      &:hover {
+        color: white;
+        border: 2px solid white;
+        transition: 0.2s ease;
       }
+    }
 
-      .project-btn {
-        padding: 12px;
-        border-radius: 15px;
-        width: 140px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        color: rgba($color: #ffffff, $alpha: 0.5);
-        font-size: 1rem;
-        background: transparent;
-        border: 2px solid rgba($color: #ffffff, $alpha: 0.5);
-        font-weight: 700;
-        margin-bottom: 0.2rem;
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        &:hover {
-          color: white;
-          border: 2px solid white;
-          transition: 0.2s ease;
-        }
-      }
-
-      .social {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        a {
-          padding: 5px;
-        }
+      a {
+        padding: 5px;
       }
     }
   }
+}
 
-  #projects {
-    height: 100vh;
+#projects {
+  padding-top: 90px;
+  height: 100vh;
+  background: white;
 
-    h1 {
-      margin-bottom: 15px;
-    }
+  h1 {
+    margin-bottom: 15px;
+  }
 
-    .work {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 0.7rem;
+  .work {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.7rem;
 
-      .proj-container {
-        position: relative;
+    .proj-container {
+      position: relative;
+      width: 100%;
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgba(224, 165, 165, 0.9); /* Black see-through */
+        color: #f1f1f1;
         width: 100%;
-
-        .overlay {
-          position: absolute;
-          bottom: 0;
-          background: rgba(224, 165, 165, 0.9); /* Black see-through */
-          color: #f1f1f1;
-          width: 100%;
-          height: 100%;
-          transition: 0.3s ease;
-          opacity: 0;
-          border-radius: 10px;
-          border: 3px #ffffff solid;
-
-          &:hover {
-            opacity: 1;
-          }
-        }
-      }
-
-      img {
-        width: 100%;
+        height: 100%;
+        transition: 0.3s ease;
+        opacity: 0;
         border-radius: 10px;
         border: 3px #ffffff solid;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      border: 3px #ffffff solid;
+    }
   }
+}
+
+#exp {
+  padding-top: 90px;
+  height: 100vh;
+  color: white;
+}
+
+
+#contact {
+  padding-top: 90px;
+  height: 100vh;
+  background: white;
 }

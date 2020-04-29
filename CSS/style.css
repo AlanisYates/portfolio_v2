@@ -8,13 +8,13 @@
 html,
 body {
   font-family: "Manrope", sans-serif;
-  background: #666666;
+  background: black;
+  scroll-behavior: smooth;
 }
 
 .title {
   font-size: 5rem;
   font-weight: 700;
-  color: #1b2031;
   margin-bottom: 0.5rem;
 }
 
@@ -29,6 +29,13 @@ body {
 }
 
 header {
+  position: fixed;
+  background: black;
+  width: 100%;
+  z-index: 50;
+}
+
+header .nav-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,13 +50,8 @@ header {
       -ms-flex-direction: row;
           flex-direction: row;
   height: 90px;
-  padding: 0 40px;
-  z-index: 1;
-  background: black;
-}
-
-header .nav-container {
-  background: black;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 header .logo {
@@ -74,6 +76,10 @@ header .logo svg path {
   fill: #f1f1f1;
 }
 
+header .menu .ct-btn {
+  padding: 0;
+}
+
 header .menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -95,7 +101,7 @@ header .menu ul li {
 header .menu ul li a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 1.0rem;
+  font-size: 1rem;
   padding-right: 20px;
 }
 
@@ -110,8 +116,8 @@ header .menu ul li a:hover {
   margin: 0 auto;
 }
 
-.container #home {
-  height: calc(100vh - 90px);
+#home {
+  height: 100vh;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -124,7 +130,7 @@ header .menu ul li a:hover {
           align-items: center;
 }
 
-.container #home .main-content {
+#home .main-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,13 +146,18 @@ header .menu ul li a:hover {
           align-items: center;
 }
 
-.container #home .main-content h3 {
+#home .main-content h1 {
+  color: white;
+}
+
+#home .main-content h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
+  color: white;
 }
 
-.container #home .main-content .project-btn {
+#home .main-content .project-btn {
   padding: 12px;
   border-radius: 15px;
   width: 140px;
@@ -168,14 +179,14 @@ header .menu ul li a:hover {
   margin-bottom: 0.2rem;
 }
 
-.container #home .main-content .project-btn:hover {
+#home .main-content .project-btn:hover {
   color: white;
   border: 2px solid white;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
 
-.container #home .main-content .social {
+#home .main-content .social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -187,32 +198,34 @@ header .menu ul li a:hover {
           align-items: center;
 }
 
-.container #home .main-content .social a {
+#home .main-content .social a {
   padding: 5px;
 }
 
-.container #projects {
+#projects {
+  padding-top: 90px;
   height: 100vh;
+  background: white;
 }
 
-.container #projects h1 {
+#projects h1 {
   margin-bottom: 15px;
 }
 
-.container #projects .work {
+#projects .work {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.7rem;
 }
 
-.container #projects .work .proj-container {
+#projects .work .proj-container {
   position: relative;
   width: 100%;
 }
 
-.container #projects .work .proj-container .overlay {
+#projects .work .proj-container .overlay {
   position: absolute;
   bottom: 0;
   background: rgba(224, 165, 165, 0.9);
@@ -227,13 +240,25 @@ header .menu ul li a:hover {
   border: 3px #ffffff solid;
 }
 
-.container #projects .work .proj-container .overlay:hover {
+#projects .work .proj-container .overlay:hover {
   opacity: 1;
 }
 
-.container #projects .work img {
+#projects .work img {
   width: 100%;
   border-radius: 10px;
   border: 3px #ffffff solid;
+}
+
+#exp {
+  padding-top: 90px;
+  height: 100vh;
+  color: white;
+}
+
+#contact {
+  padding-top: 90px;
+  height: 100vh;
+  background: white;
 }
 /*# sourceMappingURL=style.css.map */
