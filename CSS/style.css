@@ -75,6 +75,13 @@ header .logo svg path {
   fill: #f1f1f1;
 }
 
+header .menu .active-menu {
+  color: white;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  font-weight: 700;
+}
+
 header .menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -356,7 +363,7 @@ header .menu ul li a:hover {
 
 #exp {
   padding-top: 90px;
-  height: 100vh;
+  height: calc(100vh);
   color: white;
 }
 
