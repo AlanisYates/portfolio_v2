@@ -136,6 +136,7 @@ header {
       both;
   }
 
+ 
   @keyframes text-focus-in {
     0% {
       filter: blur(6px);
@@ -193,6 +194,22 @@ header {
   padding-top: 90px;
   height: 100%;
   background: white;
+
+  .fade-in {
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+
+
+  @keyframes fade-in{
+    0% {
+      transform: translateZ(-80px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
 
   h1 {
     margin-bottom: 15px;
