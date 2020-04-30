@@ -9,7 +9,6 @@ html,
 body {
   font-family: "Manrope", sans-serif;
   background: black;
-  scroll-behavior: smooth;
 }
 
 .title {
@@ -99,6 +98,7 @@ header .menu ul li a {
   color: rgba(255, 255, 255, 0.5);
   font-size: 1rem;
   padding-right: 20px;
+  scroll-behavior: smooth;
 }
 
 header .menu ul li a:hover {
@@ -268,20 +268,68 @@ header .menu ul li a:hover {
   margin-bottom: 15px;
 }
 
-#projects .work {
+#projects #btn-container {
+  /* Style the buttons */
+  /* Add a grey background color on mouse-over */
+  /* Add a dark background color to the active button */
+}
+
+#projects #btn-container .btn {
+  border: 1px solid black;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#projects #btn-container .btn:hover {
+  background-color: #ddd;
+}
+
+#projects #btn-container .btn.active {
+  background-color: #666;
+  color: white;
+}
+
+#projects .row {
+  background: white;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.7rem;
+  /* Clear floats after rows */
+  /* Create three equal columns that floats next to each other */
+  /* The "show" class is added to the filtered elements */
 }
 
-#projects .work .proj-container {
+#projects .rowrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#projects .row .column {
+  display: none;
+  /* Hide columns by default */
+}
+
+#projects .row .show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#projects .row .show .proj-container {
   position: relative;
   width: 100%;
 }
 
-#projects .work .proj-container .overlay {
+#projects .row .show .proj-container .overlay {
   position: absolute;
   bottom: 0;
   background: rgba(224, 165, 165, 0.9);
@@ -296,11 +344,11 @@ header .menu ul li a:hover {
   border: 3px #ffffff solid;
 }
 
-#projects .work .proj-container .overlay:hover {
+#projects .row .show .proj-container .overlay:hover {
   opacity: 1;
 }
 
-#projects .work img {
+#projects .row .show img {
   width: 100%;
   border-radius: 10px;
   border: 3px #ffffff solid;
@@ -362,5 +410,44 @@ footer .container .icon {
 
 footer .container .icon i {
   color: white;
+}
+
+.menu-btn {
+  visibility: hidden;
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.menu-btn .btn-line {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background: white;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.menu-btn.close {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu-btn.close .btn-line:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+          transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.close .btn-line:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(7px, -6px);
+          transform: rotate(-45deg) translate(7px, -6px);
 }
 /*# sourceMappingURL=style.css.map */
