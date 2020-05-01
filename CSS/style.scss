@@ -136,7 +136,6 @@ header {
       both;
   }
 
- 
   @keyframes text-focus-in {
     0% {
       filter: blur(6px);
@@ -164,7 +163,7 @@ header {
 
     h3 {
       font-size: 1.5rem;
-      margin-bottom: .7rem;
+      margin-bottom: 0.7rem;
       letter-spacing: 1px;
       color: white;
     }
@@ -196,11 +195,10 @@ header {
   background: white;
 
   .fade-in {
-    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
 
-
-  @keyframes fade-in{
+  @keyframes fade-in {
     0% {
       transform: translateZ(-80px);
       opacity: 0;
@@ -217,13 +215,22 @@ header {
 
   #btn-container {
     /* Style the buttons */
+    width: 100%;
+    display: flex;
+    // background: red;
+
+    button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+ 
     .btn {
       border: 2px solid rgb(0, 0, 0);
       outline: none;
       border-radius: 20px;
-      width: 120px;
+      width: 130px;
       padding: 10px 13px;
-      // background-color: black;
+      background-color: white;
       cursor: pointer;
       color: black;
       font-weight: 700;
@@ -231,13 +238,15 @@ header {
 
     /* Add a grey background color on mouse-over */
     .btn:hover {
-      border: 2px solid rgb(18, 114, 204);
+      background: black;
+      color: white;
+      transition: 0.2s ease;
     }
 
     /* Add a dark background color to the active button */
     .btn.active {
-      border: 2px solid rgb(5, 48, 139);
-      transition: 0.2s ease;
+      background: black;
+      color: white;
     }
   }
 
@@ -270,14 +279,13 @@ header {
         .overlay {
           position: absolute;
           bottom: 0;
-          background: rgba(224, 165, 165, 0.9); /* Black see-through */
-          color: #f1f1f1;
+          background: rgba(0, 0, 0, 0.5); /* Black see-through */
           width: 100%;
           height: 100%;
           transition: 0.3s ease;
           opacity: 0;
           border-radius: 10px;
-          border: 3px #ffffff solid;
+          border: 2px white solid;
 
           &:hover {
             opacity: 1;
